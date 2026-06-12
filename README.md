@@ -162,6 +162,19 @@ python -m sglang.launch_server --model-path model_dir --port 8000 --tp-size 1 --
 ```
 
 ## vLLM Server Usage
+[vLLM](https://github.com/vllm-project/vllm) is a high-throughput and memory-efficient inference and serving engine for LLMs.  Please use the following command in a fresh environment:
+```
+uv pip install vllm --torch-backend=auto --extra-index-url https://wheels.vllm.ai/nightly
+```
+See its [documentation]([https://docs.sglang.io/docs/get-started/install](https://docs.vllm.ai/en/stable/getting_started/installation/index.html)) for more details.
+
+For detailed usage guide, see the [vLLM Qwen3.5 recipe](https://docs.vllm.ai/projects/recipes/en/latest/Qwen/Qwen3.5.html).
+
+The following will create API endpoints at http://localhost:8000/v1:
+```
+vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 --reasoning-parser qwen3
+
+```
 
 ## KTransformers Server Usage
 
