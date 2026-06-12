@@ -89,9 +89,30 @@ enable_thinking = False
 model, processor = get_model_processor(model_dir)  # attn_impl='flash_attention_2'
 template = get_template(processor, enable_thinking=enable_thinking)
 engine = TransformersEngine(model, template=template)
+user_content =  "你是一个影视剧语言翻译专家，擅长根据影视剧对白并结合语境把中文翻译成其他语言\n\n"
+    "给定影视剧的一段上下文对白，结合当前影视剧的语境,将指定的对白翻译成英语\n\n"
+    上下文对白如下：
+    [上文]\n皇上已经病入膏肓了\n他病了?\n说了不见就不见\n病死也不见\n娘娘\n\n
+    [当前文本] \n'''json{\n  \"1\": \"皇后你也不该太没样了\",\n  \"2\": \"皇上重病\",\n  \"3\": \"你怎么也是个皇后     \"\n}'''\n\n
+    [下文] \n应该照应他不是\n你这样的话\n成何体统啊?\n真有这么严重啊?\n给太后请安"
+
+    "## 格式要求\n"
+    "- 输入输出格式必须完全一致：JSON格式，键为字幕编号，值为翻译内容\n"
+    "- 确保翻译后的条目数量与原始字幕完全一致\n"
+    "- 对专有名词、术语严格按照术语表执行\n"
+    "- 给定上下文，翻译当前文本，不要遗漏任何字幕\n\n"
+    "## 输出格式\n"
+    "严格按照以下JSON格式输出，不得有任何额外内容:\n"
+    "```json\n"
+    "{{\n"
+    '  "1": "翻译内容1",\n'
+    '  "2": "翻译内容2",\n'
+    "  ...\n"
+    "}}\n"
+    "```"
 infer_request = InferRequest(messages=[{
     "role": "user",
-    "content": 'who are you?',
+    "content": user_content,
 }])
 request_config = RequestConfig(max_tokens=128, temperature=0)
 resp_list = engine.infer([infer_request], request_config=request_config)
