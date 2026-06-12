@@ -56,6 +56,7 @@ user_content =  """你是一个影视剧语言翻译专家，擅长根据影视�
 
 您好 刘教授要给您添麻烦了
 """
+
 messages = [{"role": "user", "content": user_content}]
 
 text = tokenizer.apply_chat_template(
@@ -72,6 +73,7 @@ input_len = len(inputs.input_ids[0])
 generated_text = tokenizer.decode(generated_ids[0][input_len:], skip_special_tokens=True)
 
 print(f"translated_text: {generated_text}")
+
 ```
 
 ## Swift Usage
