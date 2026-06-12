@@ -18,7 +18,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # loading model
 model = AutoModelForCausalLM.from_pretrained(
     model_dir, # Model checkpoints 
-    torch_dtype=torch.float16, # 使用float16，nvidia卡可使用torch.bfloat16
+    torch_dtype=torch.float16, 
     trust_remote_code=True,
     device_map="auto"
 )
