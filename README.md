@@ -149,6 +149,17 @@ print(response)
 ```
 
 ## SGLang Server Usage
+[SGLang](https://github.com/sgl-project/sglang) is a fast serving framework for large language models and vision language models. Please use the following command in a fresh environment:
+```
+uv pip install 'git+https://github.com/sgl-project/sglang.git#subdirectory=python&egg=sglang[all]'
+```
+See its [documentation](https://docs.sglang.io/docs/get-started/install) for more details.
+
+The following will create API endpoints at http://localhost:8000/v1:
+
+```
+python -m sglang.launch_server --model-path model_dir --port 8000 --tp-size 1 --mem-fraction-static 0.8 --context-length 4096 --reasoning-parser qwen3
+```
 
 ## vLLM Server Usage
 
