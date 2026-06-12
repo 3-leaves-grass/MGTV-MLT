@@ -72,6 +72,33 @@ print(f"translated_text: {generated_text}")
 
 ## Swift Usage
 
+```
+import os
+# os.environ['SWIFT_DEBUG'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['IMAGE_MAX_TOKEN_NUM'] = '1024'
+os.environ['VIDEO_MAX_TOKEN_NUM'] = '128'
+os.environ['FPS_MAX_FRAMES'] = '16'
+
+from swift import get_model_processor, get_template
+from swift.infer_engine import TransformersEngine, InferRequest, RequestConfig
+model_dir = ""
+
+enable_thinking = False
+
+model, processor = get_model_processor(model_dir)  # attn_impl='flash_attention_2'
+template = get_template(processor, enable_thinking=enable_thinking)
+engine = TransformersEngine(model, template=template)
+infer_request = InferRequest(messages=[{
+    "role": "user",
+    "content": 'who are you?',
+}])
+request_config = RequestConfig(max_tokens=128, temperature=0)
+resp_list = engine.infer([infer_request], request_config=request_config)
+response = resp_list[0].choices[0].message.content
+print(response)
+```
+
 ## SGLang Server Usage
 
 ## vLLM Server Usage
