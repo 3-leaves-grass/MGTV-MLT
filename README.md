@@ -232,14 +232,12 @@ messages = [
 ]
 
 chat_response = client.chat.completions.create(
-    model="Qwen/Qwen3.5-9B",
+    model=model_dir,  # Model checkpoints 
     messages=messages,
-    max_tokens=81920,
-    temperature=1.0,
-    top_p=0.95,
-    presence_penalty=1.5,
+    max_tokens=4096,
     extra_body={
         "top_k": 20,
+        "chat_template_kwargs": {"enable_thinking": False},
     }, 
 )
 print("Chat response:", chat_response)
