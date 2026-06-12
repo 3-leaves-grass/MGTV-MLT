@@ -172,14 +172,21 @@ For detailed usage guide, see the [vLLM Qwen3.5 recipe](https://docs.vllm.ai/pro
 
 The following will create API endpoints at http://localhost:8000/v1:
 ```
-vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 --reasoning-parser qwen3
-
+vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 --reasoning-parser qwen3 --language-model-only
 ```
 
-## KTransformers Server Usage
-
 ## API Usage
+The chat completions API is accessible via standard HTTP requests or OpenAI SDKs. Here, we show examples using the OpenAI Python SDK.
 
+Before starting, make sure it is installed and the API key and the API base URL is configured, e.g.:
+```
+pip install -U openai
+```
+Set the following accordingly
+```
+export OPENAI_BASE_URL="http://localhost:8000/v1"
+export OPENAI_API_KEY="EMPTY"
+```
 
 # Evaluation
 
