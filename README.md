@@ -259,13 +259,15 @@ For each language, the dataset has 997 sentences for the dev split and 1012 sent
 
 Following official FLORES evaluation protocols, we adopt two core universal metrics to quantify translation quality:
 
-spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
+- spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
 
-chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
+- chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
 
 We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages  following official FLORES-200 evaluation rules.
 
 Dependencies
 
+```
 pip install sacrebleu sentencepiece
+```
 
