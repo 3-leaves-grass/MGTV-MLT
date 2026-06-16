@@ -86,7 +86,11 @@ print(f"translated_text: {generated_text}")
 ```
 
 ## Swift Usage
-
+[ms-swift](https://github.com/modelscope/ms-swift) is a large model and multimodal large model fine-tuning and deployment framework provided by the ModelScope community.
+```
+pip install ms-swift -U
+```
+see the [documents](https://swift.readthedocs.io/en/latest/) for more details
 ```
 import os
 # os.environ['SWIFT_DEBUG'] = '1'
