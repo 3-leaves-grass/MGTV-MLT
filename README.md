@@ -271,7 +271,7 @@ We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 lan
 pip install sacrebleu sentencepiece
 ```
 
-### Performance of FLORES
+### Performance 
 
 
 
