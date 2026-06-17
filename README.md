@@ -289,25 +289,25 @@ print("Chat response:", chat_response)
 The goal of film and television subtitle translation evaluation is not merely to measure the similarity between model translations and human reference translations; more importantly, it is to verify whether translated outputs satisfy the practical delivery standards for long-form video content going global. Subtitle translations are required to simultaneously meet multiple criteria including semantic accuracy, natural wording, stable segmentation, valid timestamps, and traceable quality. For this reason, a single automated metric cannot fully capture the overall quality of subtitle translations. To address this gap, we propose a new benchmark for audiovisual translation. Within this benchmark, we construct a novel evaluation framework alongside a high-quality evaluation dataset.
 Centered on automated assessment, the evaluation framework enables large-scale, reproducible measurement of the overall performance of diverse models and translation batches. When necessary, random sampling manual review is incorporated to provide supplementary judgments on subtle dimensions of subtitles such as tone, character dynamics, culturally specific expressions, and audience viewing experience.
 
-#### 评估数据基础
+#### Benchmark dataset
 
-评估集围绕真实影视字幕场景构建，覆盖 8 个语种，共 24,217 条句子级数据。
+The evaluation set is constructed based on real-world film and television subtitle scenarios, covering 11 languages with a total of 8019 sentence-level samples.
 
 | 语种 | 数据量 |
 | --- | ---: |
-| 印尼语 | 5,049 |
-| 英语 | 3,576 |
-| 越南语 | 3,079 |
-| 马来语 | 2,280 |
-| 泰语 | 2,144 |
-| 韩语 | 3,161 |
-| 日语 | 3,113 |
-| 阿语 | 1,815 |
-| 合计 | 24,217 |
+| 印尼语 | 1077 |
+| 英语 | 762 |
+| 越南语 | 657 |
+| 马来语 | 489 |
+| 泰语 | 457 |
+| 韩语 | 699 |
+| 日语 | 665 |
+| 阿语 | 388 |
+| 合计 | 8019 |
 
-#### 自动评估方法
+#### Evaluation Criteria
 
-自动评估围绕语义质量和字幕结构两类目标展开。语义质量方面，采用有参考 COMET、语义相似度和 BLEU-2 等指标，从神经评估、语义接近度和词面匹配多个角度衡量译文质量。字幕结构方面，检查字幕条目数量、顺序、空译、漏译、错位、时间轴和格式合规性，判断译文是否具备回填和交付基础。
+Automated evaluation is conducted around two core objectives: semantic quality and subtitle structural compliance. For semantic quality, reference-based COMET, semantic similarity, and BLEU-2 metrics are employed to evaluate translation quality from multiple dimensions including neural assessment, semantic proximity, and surface n-gram matching. In terms of subtitle structure, we inspect the count and order of subtitle segments, empty translations, missing translations, misalignment, timestamp validity, and format compliance to determine whether the translated subtitles can be used for backfilling and formal delivery
 
 设第 $i$ 条字幕的中文原文为 $x_i$，模型译文为 $y_i$，人工参考译文为 $r_i$。有参考 COMET 评分记为：
 
