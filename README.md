@@ -291,13 +291,13 @@ Download the test datasets of 11 languages(Russian,Indonesian,Japanese,French,Th
 
 #### Step 2
 
-Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translate results will be saved into the translated_data/:
+Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
 
 ```
 cd flores200 && python translate_flores_with_Mango_MT.py
 ```
 
-Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translate results will be saved into the translated_data/:
+Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
 
 ```
 cd flores200 && python translate_flores_with_api.py
