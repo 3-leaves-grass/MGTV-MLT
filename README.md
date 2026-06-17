@@ -272,7 +272,7 @@ pip install sacrebleu sentencepiece
 ```
 ### Steps
 #### Step 1
-Download the test datasets of 11 languages() from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
+Download the test datasets of 11 languages(Russian,Indonesian,Japanese,French,Thai,English, Spanish,Vietnamese,Arabic,Korean,Malay) from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
 
 | Code | Script | lang | file name |
 |------|--------|------|-------------------|
@@ -288,6 +288,27 @@ Download the test datasets of 11 languages() from [flores devtest](https://huggi
 | kor  | Hang   | Korean | kor_Hang.jsonl |
 | zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
 | cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
+
+#### Step 2
+
+Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translate results will be saved into the translated_data/:
+
+```
+cd flores200 && python translate_flores_with_Mango_MT.py
+```
+
+Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translate results will be saved into the translated_data/:
+
+```
+cd flores200 && python translate_flores_with_api.py
+```
+#### Evaluate 
+we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
+
+
+```
+python evaluate.py
+```
 
 ### Performance 
 
