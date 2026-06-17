@@ -272,7 +272,7 @@ pip install sacrebleu sentencepiece
 ```
 ### Steps
 #### Step 1
-Download the devtest datasets of 11 languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
+Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
 
 | Code | Script | lang | file name |
 |------|--------|------|-------------------|
