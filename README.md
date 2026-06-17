@@ -315,33 +315,31 @@ $$
 C_i = COMET(x_i, y_i, r_i)
 $$
 
-COMET 通过神经评估模型综合源文、参考译文和模型译文，预测译文与人工质量判断的一致程度，适合衡量译文是否准确还原原文语义。
+As a neural evaluation model, COMET integrates source text, human reference translation and machine translation output to predict the consistency between translations and human quality judgments. It is suitable for measuring whether the semantics of the source text are accurately preserved in translations.
 
-语义相似度基于向量表示计算模型译文与参考译文的语义接近程度，公式为：
+Semantic similarity quantifies the semantic proximity between model translations and reference translations based on text embeddings, as formulated below:
 
 $$
 E_i = \frac{v(y_i) \cdot v(r_i)}{\|v(y_i)\| \|v(r_i)\|}
 $$
 
-其中，$v(\cdot)$ 表示文本向量。该指标可补充判断同义改写、语序变化和表达差异下的语义一致性。
-
-BLEU-2 用于衡量模型译文与参考译文在二元词组层面的重合度，记为：
+where，$v(\cdot)$ represents the text embedding vector. This metric serves as a supplementary indicator for semantic consistency amid paraphrasing, word order adjustments and divergent expressions. BLEU-2 measures bigram overlap between model translations and reference translations, denoted as:
 
 $$
 B_i = BLEU_2(y_i, r_i)
 $$
 
-影视字幕多为短句，BLEU-2 对局部词面匹配和短语一致性具有补充价值，因此在加权评价值中采用加倍处理。
+Since film and television subtitles mostly consist of short utterances, BLEU-2 provides supplementary information on local surface matching and phrase consistency. Thus, its weight is doubled in the weighted composite score.
 
-为便于同一评估集内的模型和批次横向比较，自动评估进一步形成加权评价值，计算公式如下：
+To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
 
 $$
 S_i = 0.20E_i + 0.35C_i + 0.25 \times B_i + 0.10T_i + 0.10F_i
 $$
 
-其中，$S_i$ 为加权评价值，$T_i$ 为时间轴准确度，$F_i$ 为格式合规度。时间轴准确度用于判断字幕句段与视频时间信息是否保持稳定；格式合规度用于判断标点、换行、结构和字幕交付格式是否满足要求。
+其中，$S_i$ 为加权评价值，$T_i$ 为时间轴准确度，$F_i$ 为格式合规度。Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes; format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
 
-自动评估结果按总体和语种分别统计，形成平均评价值、分语种评价值和结构异常统计。通过统一数据、统一指标和统一口径，可以较为客观地比较不同翻译方案在影视字幕场景下的适用性。
+Automated evaluation results are aggregated at the global and language-specific levels to generate overall average scores, language-specific average scores and statistics of structural anomalies. With standardized datasets, unified metrics and consistent evaluation standards, we can objectively compare the applicability of different translation pipelines for film and television subtitle scenarios.
 
 
 
