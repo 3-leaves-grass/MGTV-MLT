@@ -287,7 +287,7 @@ print("Chat response:", chat_response)
 ### Benchmark Introduction
 
 The goal of film and television subtitle translation evaluation is not merely to measure the similarity between model translations and human reference translations; more importantly, it is to verify whether translated outputs satisfy the practical delivery standards for long-form video content going global. Subtitle translations are required to simultaneously meet multiple criteria including semantic accuracy, natural wording, stable segmentation, valid timestamps, and traceable quality. For this reason, a single automated metric cannot fully capture the overall quality of subtitle translations. To address this gap, we propose a new benchmark for audiovisual translation. Within this benchmark, we construct a novel evaluation framework alongside a high-quality evaluation dataset.
-Centered on automated assessment, the evaluation framework enables large-scale, reproducible measurement of the overall performance of diverse models and translation batches. When necessary, random sampling manual review is incorporated to provide supplementary judgments on subtle dimensions of subtitles such as tone, character dynamics, culturally specific expressions, and audience viewing experience.
+Centered on automated assessment, the evaluation framework enables large-scale, reproducible measurement of the overall performance of diverse models and translation batches. When necessary, random sampling manual review is incorporated to provide supplementary judgments on subtle dimensions of subtitles such as tone, character dynamics, culturally specific expressions, and audience viewing experience. We have released the [benchmark datasets](https://huggingface.co/datasets/xxx) in hugging face.
 
 #### Benchmark dataset
 
@@ -344,14 +344,26 @@ In the formula, $S_i$ refers to the weighted composite score, $T_i$ stands for t
 
 Automated evaluation results are aggregated at the global and language-specific levels to generate overall average scores, language-specific average scores and statistics of structural anomalies. With standardized datasets, unified metrics and consistent evaluation standards, we can objectively compare the applicability of different translation pipelines for film and television subtitle scenarios.
 
+### Steps
+#### Step 1
+Download benchmark [eval datasets] (https://huggingface.co/datasets/xxx)
 
 
+#### Step 2
 
+```
+xxxx
+```
 
+#### Evaluate 
 
+```
+python evaluate.py
+```
 
+### Performance 
 
-
+xxx
 
 ## Evaluation of FLORES
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
