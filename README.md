@@ -286,8 +286,8 @@ print("Chat response:", chat_response)
 
 ### Benchmark Introduction
 
-影视字幕翻译评估的目标不仅是判断译文与参考译文是否相似，更重要的是判断翻译结果是否满足长视频内容出海的实际交付要求。字幕译文需要同时满足语义准确、表达自然、条目稳定、时间轴可用和质量可追踪等要求，因此单一自动指标难以完整反映字幕翻译质量。为此，我们提出了一种新的影视剧翻译benchmark。在这个benchmark中，我们设计了一套新的评估体系以及高质量的评测数据集。
-评估体系以自动评估为主体，用于大规模、可复现地衡量不同模型和不同批次译文的整体表现；必要时结合抽样复核，对影视字幕中的语气、人物关系、文化表达和观看体验进行补充判断。
+The goal of film and television subtitle translation evaluation is not merely to measure the similarity between model translations and human reference translations; more importantly, it is to verify whether translated outputs satisfy the practical delivery standards for long-form video content going global. Subtitle translations are required to simultaneously meet multiple criteria including semantic accuracy, natural wording, stable segmentation, valid timestamps, and traceable quality. For this reason, a single automated metric cannot fully capture the overall quality of subtitle translations. To address this gap, we propose a new benchmark for audiovisual translation. Within this benchmark, we construct a novel evaluation framework alongside a high-quality evaluation dataset.
+Centered on automated assessment, the evaluation framework enables large-scale, reproducible measurement of the overall performance of diverse models and translation batches. When necessary, random sampling manual review is incorporated to provide supplementary judgments on subtle dimensions of subtitles such as tone, character dynamics, culturally specific expressions, and audience viewing experience.
 
 #### 评估数据基础
 
