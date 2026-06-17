@@ -303,13 +303,16 @@ The evaluation set is constructed based on real-world film and television subtit
 | 韩语 | 699 |
 | 日语 | 665 |
 | 阿语 | 388 |
+| 法语  | 1026|
+| 西语  | 523|
+| 俄语  | 1026|
 | 合计 | 8019 |
 
 #### Evaluation Criteria
 
 Automated evaluation is conducted around two core objectives: semantic quality and subtitle structural compliance. For semantic quality, reference-based COMET, semantic similarity, and BLEU-2 metrics are employed to evaluate translation quality from multiple dimensions including neural assessment, semantic proximity, and surface n-gram matching. In terms of subtitle structure, we inspect the count and order of subtitle segments, empty translations, missing translations, misalignment, timestamp validity, and format compliance to determine whether the translated subtitles can be used for backfilling and formal delivery
 
-设第 $i$ 条字幕的中文原文为 $x_i$，模型译文为 $y_i$，人工参考译文为 $r_i$。有参考 COMET 评分记为：
+Let $x_i$ denote the Chinese source text of the the i-th subtitle segment, $y_i$ the model-generated translation, and $r_i$ the human reference translation. The reference-based COMET score is defined as:
 
 $$
 C_i = COMET(x_i, y_i, r_i)
