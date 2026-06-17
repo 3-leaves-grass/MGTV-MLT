@@ -340,7 +340,7 @@ $$
 S_i = 0.20E_i + 0.35C_i + 0.25 \times B_i + 0.10T_i + 0.10F_i
 $$
 
-其中，$S_i$ 为加权评价值，$T_i$ 为时间轴准确度，$F_i$ 为格式合规度。Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes; format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
+In the formula, $S_i$ refers to the weighted composite score, $T_i$ stands for timestamp accuracy, $F_i$ represents format compliance. Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes; format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
 
 Automated evaluation results are aggregated at the global and language-specific levels to generate overall average scores, language-specific average scores and statistics of structural anomalies. With standardized datasets, unified metrics and consistent evaluation standards, we can objectively compare the applicability of different translation pipelines for film and television subtitle scenarios.
 
