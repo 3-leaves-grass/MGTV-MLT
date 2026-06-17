@@ -270,6 +270,23 @@ We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 lan
 ```
 pip install sacrebleu sentencepiece
 ```
+### Steps
+Download the test datasets of 11 languages() from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
+
+| Code | Script | lang | file name |
+|------|--------|------|-------------------|
+| rus  | Cyrl   | Russian | rus_Cyrl.jsonl |
+| ind  | Latn   | Indonesian | ind_Latn.jsonl |
+| jpn  | Jpan   | Japanese | jpn_Jpan.jsonl |
+| fra  | Latn   | French | fra_Latn.jsonl |
+| tha  | Thai   | Thai | tha_Thai.jsonl |
+| eng  | Latn   | English | eng_Latn.jsonl |
+| spa  | Latn   | Spanish (Latin American) | spa_Latn.jsonl |
+| vie  | Latn   | Vietnamese | vie_Latn.jsonl |
+| ara  | Arab   | Modern Standard Arabic | arb_Arab.jsonl |
+| kor  | Hang   | Korean | kor_Hang.jsonl |
+| zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
+| cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
 
 ### Performance 
 
