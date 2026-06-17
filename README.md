@@ -262,7 +262,7 @@ Following official FLORES evaluation protocols, we adopt two core universal metr
 
 - chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
 
-We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages following official FLORES-200 evaluation rules.
+We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages (Russian, Indonesian, Japanese, French, Thai, English, Spanish, Vietnamese, Arabic, Korean, Malay) following official FLORES-200 evaluation rules.
 
 
 ### Dependencies
@@ -272,7 +272,7 @@ pip install sacrebleu sentencepiece
 ```
 ### Steps
 #### Step 1
-Download the test datasets of 11 languages(Russian,Indonesian,Japanese,French,Thai,English, Spanish,Vietnamese,Arabic,Korean,Malay) from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
+Download the test datasets of 11 languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
 
 | Code | Script | lang | file name |
 |------|--------|------|-------------------|
