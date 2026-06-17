@@ -271,6 +271,7 @@ We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 lan
 pip install sacrebleu sentencepiece
 ```
 ### Steps
+#### Step 1
 Download the test datasets of 11 languages() from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus). The description of 11 languages in flores are following：
 
 | Code | Script | lang | file name |
