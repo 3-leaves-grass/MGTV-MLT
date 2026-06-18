@@ -426,9 +426,9 @@ python evaluate.py
 ```
 
 ### Performance 
-Mango MT model
-## 多语种字幕翻译自动化评测指标汇总
-| 语言   | 样本数 | 语义相似度 | BLEU-2   | COMET    | 时间轴 | 格式 | 综合分数 |
+Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model
+
+| Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | timestamp accuracy | format compliance | Overall Score |
 |--------|--------|------------|----------|----------|--------|------|----------|
 | 总体   | 8020   | 0.859403   | 0.449146 | 0.900888 | 1.0    | 1.0  | 0.911764 |
 | 马来语 | 490    | 0.816903   | 0.393724 | 0.916367 | 1.0    | 1.0  | 0.880971 |
