@@ -363,8 +363,7 @@ python evaluate.py
 
 ### Performance 
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
-
-Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value.
+Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value. 
 
  Mango-MT model:
 
@@ -417,7 +416,7 @@ GPT-5.4:
 |Spanish|523|0\.807804|0\.362856|0\.875232|1\.0|1\.0|0\.849320|
 |Arabic|388|0\.820404|0\.238392|0\.865532|1\.0|1\.0|0\.786213|
 
-Multilingual Subtitle Translation Evaluation Results based on gemini-3-pro:
+Gemini-3-pro:
 |Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
 |---|---|---|---|---|---|---|---|
 |Overall|8019|0\.821596|0\.346600|0\.889810|1\.0|1\.0|0\.849053|
