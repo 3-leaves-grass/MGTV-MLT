@@ -462,8 +462,6 @@ Multilingual Subtitle Translation Evaluation Results based on deepseek-v4-pro:
 
 Multilingual Subtitle Translation Evaluation Results based on gpt5.4:
 
-# Multilingual Subtitle Translation Evaluation Results
-
 |Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
 |---|---|---|---|---|---|---|---|
 |Overall|8020|0\.810158|0\.313546|0\.877375|1\.0|1\.0|0\.825886|
@@ -478,3 +476,19 @@ Multilingual Subtitle Translation Evaluation Results based on gpt5.4:
 |Korean|699|0\.822028|0\.209970|0\.842269|1\.0|1\.0|0\.764185|
 |Spanish|523|0\.807804|0\.362856|0\.875232|1\.0|1\.0|0\.849320|
 |Arabic|388|0\.820404|0\.238392|0\.865532|1\.0|1\.0|0\.786213|
+
+Multilingual Subtitle Translation Evaluation Results based on gemini-3-pro:
+|Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
+|---|---|---|---|---|---|---|---|
+|Overall|8019|0\.821596|0\.346600|0\.889810|1\.0|1\.0|0\.849053|
+|Malay|490|0\.787010|0\.304621|0\.906635|1\.0|1\.0|0\.827035|
+|Thai|457|0\.823896|0\.438264|0\.908024|1\.0|1\.0|0\.901719|
+|English|762|0\.845588|0\.389542|0\.926590|1\.0|1\.0|0\.888195|
+|Indonesian|1077|0\.772867|0\.305272|0\.934462|1\.0|1\.0|0\.834271|
+|Vietnamese|657|0\.810758|0\.410032|0\.933933|1\.0|1\.0|0\.894044|
+|Russian|1276|0\.838988|0\.328368|0\.866350|1\.0|1\.0|0\.835204|
+|French|1026|0\.847074|0\.377884|0\.841096|1\.0|1\.0|0\.852740|
+|Japanese|665|0\.835018|0\.368309|0\.874487|1\.0|1\.0|0\.857229|
+|Korean|699|0\.830636|0\.237857|0\.853538|1\.0|1\.0|0\.783794|
+|Spanish|523|0\.801747|0\.386711|0\.888592|1\.0|1\.0|0\.864712|
+|Arabic|387|0\.831975|0\.296359|0\.875409|1\.0|1\.0|0\.820967|
