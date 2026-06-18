@@ -365,7 +365,7 @@ python evaluate.py
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
 Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value. 
 
- Mango-MT model:
+ Evaluation Results on Mango-MT model:
 
 | Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |--------|--------|------------|----------|----------|--------|------|----------|
@@ -382,7 +382,7 @@ Following  evaluation protocols, we adopt five core translation metrics  to quan
 | Spanish   | 523    | 0.874014   | 0.500081 | 0.891235 | 1.0    | 1.0  | **0.936776** |
 | Arabic   | 388    | 0.839917   | 0.357656 | 0.868953 | 1.0    | 1.0  | **0.850945** |
 
-DeepSeek-v4-pro:
+Evaluation Results on DeepSeek-v4-pro:
 
 | Language   | Sample Count | Semantic Similarity | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |------------|--------------|---------------------|----------|----------|----------|--------|---------------|
@@ -399,7 +399,7 @@ DeepSeek-v4-pro:
 | Spanish    | 523          | 0.811760            | 0.375534 | 0.880326 | 1.0      | 1.0    | 0.858233      |
 | Arabic     | 388          | 0.834742            | 0.295438 | 0.875921 | 1.0      | 1.0    | 0.821240      |
 
-GPT-5.4:
+Evaluation Results on GPT-5.4:
 
 |Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
 |---|---|---|---|---|---|---|---|
@@ -416,7 +416,7 @@ GPT-5.4:
 |Spanish|523|0\.807804|0\.362856|0\.875232|1\.0|1\.0|0\.849320|
 |Arabic|388|0\.820404|0\.238392|0\.865532|1\.0|1\.0|0\.786213|
 
-Gemini-3-pro:
+Evaluation Results on Gemini-3-pro:
 |Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
 |---|---|---|---|---|---|---|---|
 |Overall|8019|0\.821596|0\.346600|0\.889810|1\.0|1\.0|0\.849053|
