@@ -491,6 +491,8 @@ python evaluate.py
 ```
 
 ### Performance 
+We evaluate our Mango-MT against three commercial large models (DeepSeek, Gemini, GPT) across 11 languages with two core translation metrics: BLEU (short utterance fluency, core metric for subtitles) and chrF++ (character-level semantic matching).
+
 Evaluation Results on  BLEU:
 |Language|DeepSeek|Gemini|GPT|Mango\-MT|
 |---|---|---|---|---|
@@ -522,4 +524,12 @@ Evaluation Results on chrF++:
 |Korean|31\.12|**32\.52**|30\.15|30\.22|
 |Malay|54\.19|**55\.99**|53\.95|54\.25|
 |**Macro Average**|47\.89|**49\.33**|47\.21|48\.23|
+
+
+1. **BLEU (subtitle-focused metric)**
+   Mango-MT achieves the highest macro average score (26.89), outperforming Gemini (25.59), DeepSeek (24.73) and GPT (22.67). It ranks first on 8 out of 11 languages, especially showing dominant advantages on English and Southeast Asian languages (Indonesian, Thai, Vietnamese, Malay), which fits our subtitle translation scenario perfectly.
+
+2. **chrF++ (fine-grained semantic metric)**
+   Gemini leads the macro average (49.33), followed by Mango-MT (48.23), DeepSeek (47.89) and GPT (47.21). Our model matches or outperforms commercial models across multiple languages.
+
 
