@@ -426,9 +426,9 @@ python evaluate.py
 ```
 
 ### Performance 
-Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model
+Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model:
 
-| Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | timestamp accuracy | format compliance | Overall Score |
+| Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |--------|--------|------------|----------|----------|--------|------|----------|
 | 总体   | 8020   | 0.859403   | 0.449146 | 0.900888 | 1.0    | 1.0  | 0.911764 |
 | 马来语 | 490    | 0.816903   | 0.393724 | 0.916367 | 1.0    | 1.0  | 0.880971 |
@@ -443,5 +443,38 @@ Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango M
 | 西语   | 523    | 0.874014   | 0.500081 | 0.891235 | 1.0    | 1.0  | 0.936776 |
 | 阿语   | 388    | 0.839917   | 0.357656 | 0.868953 | 1.0    | 1.0  | 0.850945 |
 
+Multilingual Subtitle Translation Evaluation Results based on deepseek-v4-pro:
 
+| Language   | Sample Count | Semantic Similarity | BLEU-2   | COMET    | Timeline | Format | Overall Score |
+|------------|--------------|---------------------|----------|----------|----------|--------|---------------|
+| Overall    | 8020         | 0.806946            | 0.312899 | 0.881785 | 1.0      | 1.0    | 0.826464      |
+| Malay      | 490          | 0.772937            | 0.269850 | 0.900785 | 1.0      | 1.0    | 0.804787      |
+| Thai       | 457          | 0.780416            | 0.351148 | 0.885932 | 1.0      | 1.0    | 0.841733      |
+| English    | 762          | 0.835910            | 0.372428 | 0.920924 | 1.0      | 1.0    | 0.875720      |
+| Indonesian | 1077         | 0.745968            | 0.247460 | 0.929048 | 1.0      | 1.0    | 0.798091      |
+| Vietnamese | 657          | 0.791891            | 0.385748 | 0.929119 | 1.0      | 1.0    | 0.876444      |
+| Russian    | 1276         | 0.824543            | 0.294146 | 0.854199 | 1.0      | 1.0    | 0.810952      |
+| French     | 1026         | 0.833093            | 0.343295 | 0.831537 | 1.0      | 1.0    | 0.829304      |
+| Japanese   | 665          | 0.828781            | 0.344643 | 0.869252 | 1.0      | 1.0    | 0.842316      |
+| Korean     | 699          | 0.814358            | 0.207775 | 0.846163 | 1.0      | 1.0    | 0.762916      |
+| Spanish    | 523          | 0.811760            | 0.375534 | 0.880326 | 1.0      | 1.0    | 0.858233      |
+| Arabic     | 388          | 0.834742            | 0.295438 | 0.875921 | 1.0      | 1.0    | 0.821240      |
 
+Multilingual Subtitle Translation Evaluation Results based on gpt5.4:
+
+# Multilingual Subtitle Translation Evaluation Results
+
+|Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
+|---|---|---|---|---|---|---|---|
+|Overall|8020|0\.810158|0\.313546|0\.877375|1\.0|1\.0|0\.825886|
+|Malay|490|0\.768620|0\.265427|0\.897863|1\.0|1\.0|0\.800690|
+|Thai|457|0\.803542|0\.382755|0\.889516|1\.0|1\.0|0\.863416|
+|English|762|0\.832979|0\.360511|0\.913667|1\.0|1\.0|0\.866635|
+|Indonesian|1077|0\.750451|0\.258435|0\.925707|1\.0|1\.0|0\.803305|
+|Vietnamese|657|0\.795900|0\.384080|0\.925085|1\.0|1\.0|0\.875000|
+|Russian|1276|0\.828267|0\.298187|0\.851815|1\.0|1\.0|0\.812882|
+|French|1026|0\.843068|0\.347100|0\.827232|1\.0|1\.0|0\.831695|
+|Japanese|665|0\.827816|0\.358832|0\.858844|1\.0|1\.0|0\.845575|
+|Korean|699|0\.822028|0\.209970|0\.842269|1\.0|1\.0|0\.764185|
+|Spanish|523|0\.807804|0\.362856|0\.875232|1\.0|1\.0|0\.849320|
+|Arabic|388|0\.820404|0\.238392|0\.865532|1\.0|1\.0|0\.786213|
