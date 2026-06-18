@@ -293,20 +293,20 @@ Centered on automated assessment, the evaluation framework enables large-scale, 
 
 The evaluation set is constructed based on real-world film and television subtitle scenarios, covering 11 languages with a total of 8019 sentence-level samples.
 
-| 语种 | 数据量 |
+| Language | Sample Count |
 | --- | ---: |
-| 印尼语 | 1077 |
-| 英语 | 762 |
-| 越南语 | 657 |
-| 马来语 | 489 |
-| 泰语 | 457 |
-| 韩语 | 699 |
-| 日语 | 665 |
-| 阿语 | 388 |
-| 法语  | 1026|
-| 西语  | 523|
-| 俄语  | 1026|
-| 合计 | 8019 |
+| Indonesian(印尼语) | 1077 |
+| English(英语) | 762 |
+| Vietnamese(越南语) | 657 |
+| Malay(马来语) | 489 |
+| Thai(泰语) | 457 |
+| Korean(韩语) | 699 |
+| Japanese(日语) | 665 |
+| Arabic(阿语) | 388 |
+| French(法语)  | 1026|
+| Spanish(西语)  | 523|
+| Russian(俄语)  | 1026|
+| All | 8019 |
 
 #### Evaluation Criteria
 
@@ -362,23 +362,24 @@ python evaluate.py
 ```
 
 ### Performance 
+We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
 
 Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model:
 
 | Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |--------|--------|------------|----------|----------|--------|------|----------|
-| 总体   | 8020   | 0.859403   | 0.449146 | 0.900888 | 1.0    | 1.0  | 0.911764 |
-| 马来语 | 490    | 0.816903   | 0.393724 | 0.916367 | 1.0    | 1.0  | 0.880971 |
-| 泰语   | 457    | 0.836646   | 0.481828 | 0.905263 | 1.0    | 1.0  | 0.925085 |
-| 英语   | 762    | 0.862242   | 0.440677 | 0.933643 | 1.0    | 1.0  | 0.919562 |
-| 印尼语 | 1077   | 0.848496   | 0.501265 | 0.940874 | 1.0    | 1.0  | 0.949637 |
-| 越南语 | 657    | 0.858959   | 0.505468 | 0.939634 | 1.0    | 1.0  | 0.953398 |
-| 俄语   | 1276   | 0.875878   | 0.457478 | 0.884543 | 1.0    | 1.0  | 0.913505 |
-| 法语   | 1026   | 0.879256   | 0.472997 | 0.860401 | 1.0    | 1.0  | 0.913490 |
-| 日语   | 665    | 0.858157   | 0.426881 | 0.889264 | 1.0    | 1.0  | 0.896314 |
-| 韩语   | 699    | 0.860051   | 0.326254 | 0.878718 | 1.0    | 1.0  | 0.842689 |
-| 西语   | 523    | 0.874014   | 0.500081 | 0.891235 | 1.0    | 1.0  | 0.936776 |
-| 阿语   | 388    | 0.839917   | 0.357656 | 0.868953 | 1.0    | 1.0  | 0.850945 |
+| Overall   | 8020   | 0.859403   | 0.449146 | 0.900888 | 1.0    | 1.0  | **0.911764** |
+| Malay | 490    | 0.816903   | 0.393724 | 0.916367 | 1.0    | 1.0  | **0.880971** |
+| Thai   | 457    | 0.836646   | 0.481828 | 0.905263 | 1.0    | 1.0  | **0.925085** |
+| English   | 762    | 0.862242   | 0.440677 | 0.933643 | 1.0    | 1.0  | **0.919562** |
+| Indonesian | 1077   | 0.848496   | 0.501265 | 0.940874 | 1.0    | 1.0  | **0.949637** |
+| Vietnamese | 657    | 0.858959   | 0.505468 | 0.939634 | 1.0    | 1.0  | **0.953398** |
+| Russian   | 1276   | 0.875878   | 0.457478 | 0.884543 | 1.0    | 1.0  | **0.913505** |
+| French   | 1026   | 0.879256   | 0.472997 | 0.860401 | 1.0    | 1.0  | **0.913490** |
+| Japanese   | 665    | 0.858157   | 0.426881 | 0.889264 | 1.0    | 1.0  | **0.896314** |
+| Korean   | 699    | 0.860051   | 0.326254 | 0.878718 | 1.0    | 1.0  | **0.842689** |
+| Spanish   | 523    | 0.874014   | 0.500081 | 0.891235 | 1.0    | 1.0  | **0.936776** |
+| Arabic   | 388    | 0.839917   | 0.357656 | 0.868953 | 1.0    | 1.0  | **0.850945** |
 
 Multilingual Subtitle Translation Evaluation Results based on deepseek-v4-pro:
 
@@ -429,6 +430,8 @@ Multilingual Subtitle Translation Evaluation Results based on gemini-3-pro:
 |Korean|699|0\.830636|0\.237857|0\.853538|1\.0|1\.0|0\.783794|
 |Spanish|523|0\.801747|0\.386711|0\.888592|1\.0|1\.0|0\.864712|
 |Arabic|387|0\.831975|0\.296359|0\.875409|1\.0|1\.0|0\.820967|
+
+On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value.
 
 ## Evaluation of FLORES
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
@@ -491,7 +494,7 @@ python evaluate.py
 ```
 
 ### Performance 
-We evaluate our Mango-MT against three commercial large models (DeepSeek, Gemini, GPT) across 11 languages with two core translation metrics: BLEU (short utterance fluency, core metric for subtitles) and chrF++ (character-level semantic matching).
+We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with two core translation metrics: BLEU (short utterance fluency, core metric for subtitles) and chrF++ (character-level semantic matching).
 
 Evaluation Results on  BLEU:
 |Language|DeepSeek|Gemini|GPT|Mango\-MT|
