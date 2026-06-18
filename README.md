@@ -364,7 +364,9 @@ python evaluate.py
 ### Performance 
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
 
-Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model:
+Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value.
+
+ Mango-MT model:
 
 | Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |--------|--------|------------|----------|----------|--------|------|----------|
@@ -381,7 +383,7 @@ Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango M
 | Spanish   | 523    | 0.874014   | 0.500081 | 0.891235 | 1.0    | 1.0  | **0.936776** |
 | Arabic   | 388    | 0.839917   | 0.357656 | 0.868953 | 1.0    | 1.0  | **0.850945** |
 
-Multilingual Subtitle Translation Evaluation Results based on deepseek-v4-pro:
+DeepSeek-v4-pro:
 
 | Language   | Sample Count | Semantic Similarity | BLEU-2   | COMET    | Timeline | Format | Overall Score |
 |------------|--------------|---------------------|----------|----------|----------|--------|---------------|
@@ -398,7 +400,7 @@ Multilingual Subtitle Translation Evaluation Results based on deepseek-v4-pro:
 | Spanish    | 523          | 0.811760            | 0.375534 | 0.880326 | 1.0      | 1.0    | 0.858233      |
 | Arabic     | 388          | 0.834742            | 0.295438 | 0.875921 | 1.0      | 1.0    | 0.821240      |
 
-Multilingual Subtitle Translation Evaluation Results based on gpt5.4:
+GPT-5.4:
 
 |Language|Sample Count|Semantic Similarity|BLEU\-2|COMET|Timeline|Format|Overall Score|
 |---|---|---|---|---|---|---|---|
@@ -431,7 +433,7 @@ Multilingual Subtitle Translation Evaluation Results based on gemini-3-pro:
 |Spanish|523|0\.801747|0\.386711|0\.888592|1\.0|1\.0|0\.864712|
 |Arabic|387|0\.831975|0\.296359|0\.875409|1\.0|1\.0|0\.820967|
 
-- Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value.
+
 
 ## Evaluation of FLORES
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
