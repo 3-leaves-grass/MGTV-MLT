@@ -363,69 +363,6 @@ python evaluate.py
 
 ### Performance 
 
-xxx
-
-## Evaluation of FLORES
-We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
-The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
-
-For each language, the dataset has 997 sentences for the dev split and 1012 sentences for the devtest split. The separate blind test set, originally developed by Meta, is not managed by OLDI.
-
-Following official FLORES evaluation protocols, we adopt two core universal metrics to quantify translation quality:
-
-- spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
-
-- chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
-
-We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages (Russian, Indonesian, Japanese, French, Thai, English, Spanish, Vietnamese, Arabic, Korean, Malay) following official FLORES-200 evaluation rules.
-
-
-### Dependencies
-
-```
-pip install sacrebleu sentencepiece
-```
-### Steps
-#### Step 1
-Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
-
-| Code | Script | lang | file name |
-|------|--------|------|-------------------|
-| rus  | Cyrl   | Russian | rus_Cyrl.jsonl |
-| ind  | Latn   | Indonesian | ind_Latn.jsonl |
-| jpn  | Jpan   | Japanese | jpn_Jpan.jsonl |
-| fra  | Latn   | French | fra_Latn.jsonl |
-| tha  | Thai   | Thai | tha_Thai.jsonl |
-| eng  | Latn   | English | eng_Latn.jsonl |
-| spa  | Latn   | Spanish (Latin American) | spa_Latn.jsonl |
-| vie  | Latn   | Vietnamese | vie_Latn.jsonl |
-| ara  | Arab   | Modern Standard Arabic | arb_Arab.jsonl |
-| kor  | Hang   | Korean | kor_Hang.jsonl |
-| zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
-| cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
-
-#### Step 2
-
-Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
-
-```
-cd flores200 && python translate_flores_with_Mango_MT.py
-```
-
-Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
-
-```
-cd flores200 && python translate_flores_with_api.py
-```
-#### Evaluate 
-we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
-
-
-```
-python evaluate.py
-```
-
-### Performance 
 Multilingual Subtitle Translation Automated Evaluation Metrics  based on Mango MT model:
 
 | Language| Sample Count | Semantic similarity  | BLEU-2   | COMET    | Timeline | Format | Overall Score |
@@ -492,3 +429,66 @@ Multilingual Subtitle Translation Evaluation Results based on gemini-3-pro:
 |Korean|699|0\.830636|0\.237857|0\.853538|1\.0|1\.0|0\.783794|
 |Spanish|523|0\.801747|0\.386711|0\.888592|1\.0|1\.0|0\.864712|
 |Arabic|387|0\.831975|0\.296359|0\.875409|1\.0|1\.0|0\.820967|
+
+## Evaluation of FLORES
+We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
+The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
+
+For each language, the dataset has 997 sentences for the dev split and 1012 sentences for the devtest split. The separate blind test set, originally developed by Meta, is not managed by OLDI.
+
+Following official FLORES evaluation protocols, we adopt two core universal metrics to quantify translation quality:
+
+- spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
+
+- chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
+
+We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages (Russian, Indonesian, Japanese, French, Thai, English, Spanish, Vietnamese, Arabic, Korean, Malay) following official FLORES-200 evaluation rules.
+
+
+### Dependencies
+
+```
+pip install sacrebleu sentencepiece
+```
+### Steps
+#### Step 1
+Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
+
+| Code | Script | lang | file name |
+|------|--------|------|-------------------|
+| rus  | Cyrl   | Russian | rus_Cyrl.jsonl |
+| ind  | Latn   | Indonesian | ind_Latn.jsonl |
+| jpn  | Jpan   | Japanese | jpn_Jpan.jsonl |
+| fra  | Latn   | French | fra_Latn.jsonl |
+| tha  | Thai   | Thai | tha_Thai.jsonl |
+| eng  | Latn   | English | eng_Latn.jsonl |
+| spa  | Latn   | Spanish (Latin American) | spa_Latn.jsonl |
+| vie  | Latn   | Vietnamese | vie_Latn.jsonl |
+| ara  | Arab   | Modern Standard Arabic | arb_Arab.jsonl |
+| kor  | Hang   | Korean | kor_Hang.jsonl |
+| zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
+| cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
+
+#### Step 2
+
+Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
+
+```
+cd flores200 && python translate_flores_with_Mango_MT.py
+```
+
+Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
+
+```
+cd flores200 && python translate_flores_with_api.py
+```
+#### Evaluate 
+we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
+
+
+```
+python evaluate.py
+```
+
+### Performance 
+
