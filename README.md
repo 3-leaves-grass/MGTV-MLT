@@ -34,9 +34,9 @@
 ## News 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance in the benchamark on film and television translation (overall score: 0.911764), and our model matches or outperforms commercial models across most languages on Flores-200.
+- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FTT-MT (overall score: 0.911764), and our model matches or outperforms commercial models across most languages on Flores-200.
   
-- **2026/06/22** : 🔥 We open-source the benchamark on film and television translation.
+- **2026/06/22** : 🔥 We open-source the benchamark (FTT-MT) constructed on professional film and television translation data.
 
 
 
