@@ -1,35 +1,7 @@
 # Introduction
 
-## 1. 面向内容出海的多语种字幕需求
-
-随着影视剧、综艺、纪录片等长视频内容持续拓展海外传播渠道，多语种字幕已成为内容国际化分发的重要基础能力。字幕不仅承担语言转换功能，还直接影响海外用户对剧情推进、人物关系、情绪表达、文化信息和节目风格的理解。对于长视频平台而言，字幕翻译质量已经从单一语言服务问题，发展为影响内容出海效率、海外用户体验和多语种内容资产建设的关键环节。
-
-在实际生产中，字幕翻译还与审核分发、成片回填、AI 配音、多平台复用等后续环节紧密相关。译文如果存在条目错位、时间轴破坏、漏译错译或表达不自然等问题，不仅会增加人工校对成本，也会影响整集内容的交付稳定性。因此，面向影视字幕场景建设可规模化、可追踪、可持续优化的智能翻译能力，具有明确的业务必要性。
-
-## 2. 影视字幕翻译的场景特殊性
-
-影视字幕不同于普通通用文本。普通机器翻译通常以独立句子为基本单位，而影视字幕天然具有“短条目、强上下文、严结构”的特点。单条字幕往往只是完整语义的一部分，人物称谓、代词指代、语气变化和剧情承接都需要依赖前后文才能准确判断。
-
-同时，字幕翻译必须遵守原始字幕条目和时间轴约束。译文既要准确表达原意，又要适合屏幕阅读节奏，不能因译文过长影响观看体验，也不能因合并、拆分或漏译破坏字幕回填。对于综艺、影视对白等内容，还存在大量口语表达、节目化用语、文化梗、人名别称和固定术语，通用翻译模型容易出现语义理解不足、风格不一致和专名翻译波动等问题。
-
-因此，影视字幕翻译不是简单的文本替换，而是一个同时受语义、结构、时间轴、术语、口语风格和交付规范约束的复杂生产任务。
-
-## 3. 传统翻译方式的不足
-
-传统逐句机翻或直接调用通用大模型的方式，在短文本翻译场景中具备一定可用性，但难以充分满足长视频字幕生产要求。其主要不足体现在：一是孤立处理单条字幕，容易忽略上下文中的人物关系和剧情承接；二是对字幕条目结构缺少稳定约束，批量翻译时容易发生漏译、错位或条目数量不一致；三是对影视专名、称谓和节目术语缺少持续一致的约束机制；四是缺少面向大规模交付的质量评估与问题回流流程。
-
-这些问题在单条样例中可能不明显，但在整集、整季、多语种批量翻译中会持续放大，最终表现为质量不稳定、人工返工成本高和上线交付不可控。
-
-## 4. 建设必要性与应用价值
-
-围绕上述业务痛点，面向影视字幕翻译场景建设智能化翻译能力，目标是形成“结构可靠、语义准确、质量可控、可规模化交付”的技术体系。该体系以字幕结构保持为基础，以上下文增强翻译为核心，以术语约束、质量评估和异常校正为保障，支撑长视频多语种内容的稳定生产。
-
-能力建设的重点不在于简单调用翻译接口，而在于将影视字幕的真实生产约束纳入统一流程：在译前完成字幕结构识别和语义组织，在译中结合上下文和术语约束提升表达一致性，在译后通过自动检查和人工复核形成质量闭环。通过这一体系，字幕翻译能力能够从“文本可翻译”提升为“字幕可回填、可审核、可播出、可复用”。
-
-该字幕翻译能力能够为长视频内容出海提供稳定的多语种字幕生产基础。一方面，可提升海外内容本地化效率，缩短字幕生产周期，降低人工校对和返工成本；另一方面，可沉淀影视垂类语料、术语资产和质量反馈，为后续模型训练、语种扩展和 AI 配音等应用提供持续支撑。
-
-从平台能力建设角度看，该体系有助于形成面向影视字幕生产的智能翻译闭环，增强多语种内容资产的可复用性和可扩展性，对网络视听平台建设自主可控的多语种译制能力具有重要意义。
-
+With the rapid expansion of overseas distribution for films, variety shows and documentaries, high-quality multilingual subtitles have become essential for global video content localization. Unlike general text translation, film and drama subtitles feature fragmented utterances, strong contextual dependencies, strict timeline constraints, and domain-specific colloquial expressions and proper nouns. However, conventional machine translation and general commercial models often ignore cross-sentence plot coherence, fail to preserve subtitle structural integrity, and suffer from inconsistent terminology and unstable translation quality in large-scale production.
+To tackle these practical industrial challenges, we propose Mango-MT, a specialized multilingual translation model optimized for long video subtitle scenarios. We also build a dedicated subtitle translation benchmark to systematically evaluate real-world translation performance. Experimental results across 11 languages show that Mango-MT matches or outperforms mainstream commercial models including GPT, Gemini and DeepSeek. It reliably preserves subtitle formats and timelines, delivers consistent semantic and stylistic outputs, and supports scalable, high-quality subtitle localization for long-form video content.
 
 ## News 🚀🚀🚀
 
