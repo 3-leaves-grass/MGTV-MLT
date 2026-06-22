@@ -340,7 +340,7 @@ Translate with DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4 by using following .py :
 python benchmark/translate_with_api.py --input /benchmark/data/result_1.xlsx --output /benchmark/result_2.xlsx
 ```
 
-#### Evaluate 
+#### Step 4
 Evaluate the translated data to get the final evaluation score by using:
 
 ```
@@ -472,9 +472,8 @@ Similarly, translate Chinese into 11 languages by using following .py based on g
 ```
 cd flores200 && python translate_flores_with_api.py
 ```
-#### Evaluate 
+#### Step 3
 we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
-
 
 ```
 python evaluate.py
