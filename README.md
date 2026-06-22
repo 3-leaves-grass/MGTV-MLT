@@ -1,4 +1,4 @@
-# 影视字幕翻译背景
+# Introduction
 
 ## 1. 面向内容出海的多语种字幕需求
 
@@ -39,19 +39,19 @@
 
 
 
-# Installation
+## Installation
 ```
 conda create -n mlt python==3.11
 conda activate mlt
 pip install -r requirements.txt
 ```
 
-# Model Weights
+## Model Weights
 Model checkpoints are accessible from xxx
 
-# Usage
+## Usage
 
-## Transformers Usage
+### Transformers Usage
 
 ```
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -126,7 +126,7 @@ print(f"translated_text: {generated_text}")
 
 ```
 
-## Swift Usage
+### Swift Usage
 [ms-swift](https://github.com/modelscope/ms-swift) is a large model and multimodal large model fine-tuning and deployment framework provided by the ModelScope community.
 ```
 pip install ms-swift -U
@@ -193,7 +193,7 @@ response = resp_list[0].choices[0].message.content
 print(response)
 ```
 
-## SGLang Server Usage
+### SGLang Server Usage
 [SGLang](https://github.com/sgl-project/sglang) is a fast serving framework for large language models and vision language models. Please use the following command in a fresh environment:
 ```
 uv pip install 'git+https://github.com/sgl-project/sglang.git#subdirectory=python&egg=sglang[all]'
@@ -206,7 +206,7 @@ The following will create API endpoints at http://localhost:8000/v1:
 python -m sglang.launch_server --model-path model_dir --port 8000 --tp-size 1 --mem-fraction-static 0.8 --context-length 4096 --reasoning-parser qwen3
 ```
 
-## vLLM Server Usage
+### vLLM Server Usage
 [vLLM](https://github.com/vllm-project/vllm) is a high-throughput and memory-efficient inference and serving engine for LLMs.  Please use the following command in a fresh environment:
 ```
 uv pip install vllm --torch-backend=auto --extra-index-url https://wheels.vllm.ai/nightly
@@ -220,7 +220,7 @@ The following will create API endpoints at http://localhost:8000/v1:
 vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 --reasoning-parser qwen3 --language-model-only
 ```
 
-## API Usage
+### API Usage
 The chat completions API is accessible via standard HTTP requests or OpenAI SDKs. Here, we show examples using the OpenAI Python SDK.
 
 Before starting, make sure it is installed and the API key and the API base URL is configured, e.g.:
@@ -287,16 +287,16 @@ chat_response = client.chat.completions.create(
 )
 print("Chat response:", chat_response)
 ```
-# Evaluation
+## Evaluation
 
-## Performance of our benchmark
+### Performance of our benchmark
 
-### Benchmark Introduction
+#### Benchmark Introduction
 
 The goal of film and television subtitle translation evaluation is not merely to measure the similarity between model translations and human reference translations; more importantly, it is to verify whether translated outputs satisfy the practical delivery standards for long-form video content going global. Subtitle translations are required to simultaneously meet multiple criteria including semantic accuracy, natural wording, stable segmentation, valid timestamps, and traceable quality. For this reason, a single automated metric cannot fully capture the overall quality of subtitle translations. To address this gap, we propose a new benchmark for audiovisual translation. Within this benchmark, we construct a novel evaluation framework alongside a high-quality evaluation dataset.
 Centered on automated assessment, the evaluation framework enables large-scale, reproducible measurement of the overall performance of diverse models and translation batches. When necessary, random sampling manual review is incorporated to provide supplementary judgments on subtle dimensions of subtitles such as tone, character dynamics, culturally specific expressions, and audience viewing experience. We have released the [benchmark datasets](https://huggingface.co/datasets/xxx) in hugging face.
 
-#### Benchmark dataset
+##### Benchmark dataset
 
 The evaluation set is constructed based on real-world film and television subtitle scenarios, covering 11 languages with a total of 8019 sentence-level samples.
 
@@ -315,7 +315,7 @@ The evaluation set is constructed based on real-world film and television subtit
 | Russian(俄语)  | 1026|
 | All | 8019 |
 
-#### Evaluation Criteria
+##### Evaluation Criteria
 
 Automated evaluation is conducted around two core objectives: semantic quality and subtitle structural compliance. For semantic quality, reference-based COMET, semantic similarity, and BLEU-2 metrics are employed to evaluate translation quality from multiple dimensions including neural assessment, semantic proximity, and surface n-gram matching. In terms of subtitle structure, we inspect the count and order of subtitle segments, empty translations, missing translations, misalignment, timestamp validity, and format compliance to determine whether the translated subtitles can be used for backfilling and formal delivery
 
@@ -343,24 +343,24 @@ In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarit
 7. **Format：**
    Format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
 
-### Steps
-#### Step 1
+#### Steps
+##### Step 1
 Download benchmark [eval datasets] (https://huggingface.co/datasets/xxx)
 
 
-#### Step 2
+##### Step 2
 
 ```
 xxxx
 ```
 
-#### Evaluate 
+##### Evaluate 
 
 ```
 python evaluate.py
 ```
 
-### Performance 
+#### Performance 
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
 Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value. 
 
@@ -433,7 +433,7 @@ Evaluation Results on Gemini-3-pro:
 
 
 
-## Evaluation of FLORES
+### Evaluation of FLORES
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
 The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
 
@@ -448,13 +448,13 @@ Following official FLORES evaluation protocols, we adopt two core universal metr
 We measure translation performance on FLORES-200 using BLEU and chrF++ on 11 languages (Russian, Indonesian, Japanese, French, Thai, English, Spanish, Vietnamese, Arabic, Korean, Malay) following official FLORES-200 evaluation rules.
 
 
-### Dependencies
+#### Dependencies
 
 ```
 pip install sacrebleu sentencepiece
 ```
-### Steps
-#### Step 1
+#### Steps
+##### Step 1
 Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
 
 | Code | Script | lang | file name |
@@ -472,7 +472,7 @@ Download the devtest datasets of following languages from [flores devtest](https
 | zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
 | cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
 
-#### Step 2
+##### Step 2
 
 Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
 
@@ -485,7 +485,7 @@ Similarly, translate Chinese into 11 languages by using following .py based on g
 ```
 cd flores200 && python translate_flores_with_api.py
 ```
-#### Evaluate 
+##### Evaluate 
 we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
 
 
@@ -493,7 +493,7 @@ we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation qual
 python evaluate.py
 ```
 
-### Performance 
+#### Performance 
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with two core translation metrics: BLEU (short utterance fluency, core metric for subtitles) and chrF++ (character-level semantic matching).
 
 Evaluation Results on  BLEU:
