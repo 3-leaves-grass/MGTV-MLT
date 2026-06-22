@@ -31,6 +31,13 @@
 从平台能力建设角度看，该体系有助于形成面向影视字幕生产的智能翻译闭环，增强多语种内容资产的可复用性和可扩展性，对网络视听平台建设自主可控的多语种译制能力具有重要意义。
 
 
+## News 🚀🚀🚀
+
+- **2025/08/30** : 🔥 We open-source the training code of [InternVL3_5-GPT-OSS-20B-A4B] and CascadeRL, which consists of a [offline RL stage] and a [online RL stage]. The training data for these two stages (MMPR-v1.2 and MMPR-Tiny) are also open-sourced.
+
+- **2025/08/26** : 🚀 We introduce [InternVL3.5], a new family of open-source multimodal models that significantly advances versatility, reasoning capability, and inference efficiency along the InternVL series. Our largest model, i.e., [InternVL3.5-241B-A28B], attains state-of-the-art results among open-source MLLMs across general multimodal, reasoning, text, and agentic tasks. We also provide a 20B-A4B version (i.e., [InternVL3_5-GPT-OSS-20B-A4B]), which is built up on GPT-OSS-20B-A4B. Notably, we provide two model formats: [the GitHub format], consistent with prior releases, and [the HF format], aligned with the official `transformers` standard.
+
+
 
 # Installation
 ```
