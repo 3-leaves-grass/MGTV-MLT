@@ -312,41 +312,29 @@ The evaluation set is constructed based on real-world film and television subtit
 
 Automated evaluation is conducted around two core objectives: semantic quality and subtitle structural compliance. For semantic quality, reference-based COMET, semantic similarity, and BLEU-2 metrics are employed to evaluate translation quality from multiple dimensions including neural assessment, semantic proximity, and surface n-gram matching. In terms of subtitle structure, we inspect the count and order of subtitle segments, empty translations, missing translations, misalignment, timestamp validity, and format compliance to determine whether the translated subtitles can be used for backfilling and formal delivery
 
-Let $x_i$ denote the Chinese source text of the the i-th subtitle segment, $y_i$ the model-generated translation, and $r_i$ the human reference translation. The reference-based COMET score is defined as:
-
-$$
-C_i = COMET(x_i, y_i, r_i)
-$$
-
-As a neural evaluation model, COMET integrates source text, human reference translation and machine translation output to predict the consistency between translations and human quality judgments. It is suitable for measuring whether the semantics of the source text are accurately preserved in translations.
-
-Semantic similarity quantifies the semantic proximity between model translations and reference translations based on text embeddings, as formulated below:
-
-$$
-E_i = \frac{v(y_i) \cdot v(r_i)}{\|v(y_i)\| \|v(r_i)\|}
-$$
-
-where，$v(\cdot)$ represents the text embedding vector. This metric serves as a supplementary indicator for semantic consistency amid paraphrasing, word order adjustments and divergent expressions. BLEU-2 measures bigram overlap between model translations and reference translations, denoted as:
-
-$$
-B_i = BLEU_2(y_i, r_i)
-$$
-
-Since film and television subtitles mostly consist of short utterances, BLEU-2 provides supplementary information on local surface matching and phrase consistency. Thus, its weight is doubled in the weighted composite score.
-
 To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
 
 $$
-S_i = 0.20E_i + 0.35C_i + 0.25 \times B_i + 0.10T_i + 0.10F_i
+S = 0.20E + 0.35C + 0.25 \times B + 0.10T + 0.10F
 $$
 
-In the formula, $S_i$ refers to the weighted composite score, $T_i$ stands for timestamp accuracy, $F_i$ represents format compliance. Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes; format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
+In the formula, $C$ denotes i-th subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted composite score, $T$ stands for timestamp accuracy, $F$ represents format compliance. 
 
-1. **BLEU (subtitle-focused metric)**
-   Mango-MT achieves the highest macro average score (26.89), outperforming Gemini (25.59), DeepSeek (24.73) and GPT (22.67). It ranks first on 8 out of 11 languages, especially showing dominant advantages on English and Southeast Asian languages (Indonesian, Thai, Vietnamese, Malay), which fits our subtitle translation scenario perfectly.
 
-2. **chrF++ (fine-grained semantic metric)**
-   Gemini leads the macro average (49.33), followed by Mango-MT (48.23), DeepSeek (47.89) and GPT (47.21). Our model matches or outperforms commercial models across multiple languages.
+1. **Semantic similarity：**
+   Semantic similarity quantifies the semantic proximity between model translations and reference translations based on text embeddings.
+   
+3. **COMET：**
+   As a neural evaluation model, COMET integrates source text, human reference translation and machine translation output to predict the consistency between translations and human quality judgments. It is suitable for measuring whether the semantics of the source text are accurately preserved in translations.
+   
+5. **BLEU-2：**
+   BLEU-2 provides supplementary information on local surface matching and phrase consistency. Thus, its weight is doubled in the weighted composite score.
+
+6. **Timestamp：**
+   Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes.
+   
+7. **Format：**
+   Format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
 
 ### Steps
 #### Step 1
@@ -534,7 +522,7 @@ Evaluation Results on chrF++:
 |**Macro Average**|47\.89|**49\.33**|47\.21|48\.23|
 
 
-1. **BLEU (subtitle-focused metric)：**：
+1. **BLEU (subtitle-focused metric)：**
    Mango-MT achieves the highest macro average score (26.89), outperforming Gemini (25.59), DeepSeek (24.73) and GPT (22.67). It ranks first on 8 out of 11 languages, especially showing dominant advantages on English and Southeast Asian languages (Indonesian, Thai, Vietnamese, Malay), which fits our subtitle translation scenario perfectly.
 
 2. **chrF++ (fine-grained semantic metric)：**
