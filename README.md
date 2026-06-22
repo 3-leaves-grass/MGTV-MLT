@@ -322,19 +322,29 @@ In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarit
 
 ### Steps
 #### Step 1
-Download benchmark [eval datasets] (https://huggingface.co/datasets/xxx)
+Download [eval data](https://huggingface.co/datasets/xxx) and put in /benchmark/data/test_corpus.xlsx
 
 
 #### Step 2
+Translate with Mango-MT model by using following .py :
 
 ```
-xxxx
+python benchmark/translate_with_Mango_MT.py --input /benchmark/data/test_corpus.xlsx --output /benchmark/result_1.xlsx
+```
+
+#### Step 3
+Translate with DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4 by using following .py :
+
+
+```
+python benchmark/translate_with_api.py --input /benchmark/data/result_1.xlsx --output /benchmark/result_2.xlsx
 ```
 
 #### Evaluate 
+Evaluate the translated data to get the final evaluation score by using:
 
 ```
-python evaluate.py
+python benchmark/evaluate.py --input /benchmark/result_2.xlsx
 ```
 
 ### Performance 
