@@ -318,7 +318,7 @@ $$
 S = 0.20E + 0.35C + 0.25 \times B + 0.10T + 0.10F
 $$
 
-In the formula, $C$ denotes i-th subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted composite score, $T$ stands for timestamp accuracy, $F$ represents format compliance. 
+In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted composite score, $T$ stands for timestamp accuracy, $F$ represents format compliance. 
 
 
 1. **Semantic similarity：**
