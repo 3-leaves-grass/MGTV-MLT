@@ -1,3 +1,6 @@
+
+Mango-MT: A 9B Model Bridging the Gap with Closed-Source Audiovisual MT
+
 # Introduction
 
 Global distribution of long-form videos demands reliable multilingual subtitle translation, yet generic translation models struggle with subtitles’ fragmented text, strict timeline rules and plot-dependent context, yielding unstable outputs in mass production. To solve these industrial pain points, we present Mango-MT, an 11-language translation model tailored for audiovisual subtitles, alongside a dedicated evaluation benchmark FTT-MT. Tests across 11 languages prove Mango-MT surpasses mainstream models like GPT, Gemini and DeepSeek, with robust retention of subtitle timelines, unified semantics and scalable production capacity. Our work has four distinct advantages over prior solutions:
