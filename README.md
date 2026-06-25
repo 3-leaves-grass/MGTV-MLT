@@ -17,7 +17,7 @@ Global long-form video expansion requires robust multilingual subtitle translati
 ## News 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FTT-MT (overall score: **0.91**), and our model matches or outperforms commercial models across most languages on Flores-200.
+- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FTT-MT, and our model matches or outperforms commercial models across most languages on Flores+.
   
 - **2026/06/22** : 🔥 We open-source the benchamark (FTT-MT) constructed on professional film and television translation data.
 
@@ -233,11 +233,11 @@ Evaluation Results on S(overall score) are:
 | Mango-MT        | **0.86**  | **0.91** | **0.90**| **0.93**  | **0.94** | **0.89**    | **0.90**   | **0.87**     | **0.81**   | **0.92**    | **0.81**   |
 
 
-### FLORES
+### FLORES+
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
 The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
 
-Following official FLORES evaluation protocols, we adopt two core universal metrics to quantify translation quality:
+Following official FLORES+ evaluation protocols, we adopt two core universal metrics to quantify translation quality:
 
 - spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
 
