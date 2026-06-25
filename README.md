@@ -38,7 +38,7 @@ Model checkpoints are accessible from xxx
 
 ### Transformers Usage
 ```
-python examples/infer/swift_infer.py
+python examples/infer/transformers_infer.py
 ```
 
 
@@ -49,7 +49,7 @@ pip install ms-swift -U
 ```
 see the [documents](https://swift.readthedocs.io/en/latest/) for more details
 ```
-python examples/infer/transformers_infer.py
+python examples/infer/swift_infer.py
 ```
 
 ### SGLang Server Usage
