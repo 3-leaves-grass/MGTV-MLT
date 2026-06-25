@@ -90,7 +90,7 @@ The evaluation set is constructed based on real-world film and television subtit
 
 #### Criteria
 
-To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
+To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score with follwoing metrics:
 
 1. **Semantic similarity：**
    Semantic similarity quantifies the semantic proximity between model translations and reference translations based on text embeddings.
