@@ -223,24 +223,12 @@ python benchmark/evaluate.py --input /benchmark/result_2.xlsx
 We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with five core translation metrics: Semantic similarity, BLEU-2, COMET, Timeline, Format
 Following  evaluation protocols, we adopt five core translation metrics  to quantify translation quality. On translation benchmark, Mango-MT outperforms Gemini, DeepSeek and GPT across all 11 evaluated languages. This demonstrates that our model delivers powerful multilingual translation capabilities for film and drama content, and possesses significant commercial deployment value. 
 
-| Models          | Metric             | Malay | Thai | English | Indonesian | Vietnamese | Russian | French | Japanese | Korean | Spanish | Arabic |
-|-----------------|--------------------|-------|------|---------|------------|------------|---------|--------|----------|--------|---------|--------|
-| DeepSeek-V4-Pro | Semantic Similarity| 0.77  | 0.78 | 0.84    | 0.75       | 0.79       | 0.82    | 0.83   | 0.83     | 0.81   | 0.81    | 0.83   |
-|                 | BLEU-2             | 0.27  | 0.35 | 0.37    | 0.25       | 0.39       | 0.29    | 0.34   | 0.34     | 0.21   | 0.38    | 0.30   |
-|                 | COMET              | 0.90  | 0.89 | 0.92    | 0.93       | 0.93       | 0.85    | 0.83   | 0.87     | 0.85   | 0.88    | 0.88   |
-|                 | S                  | 0.76  | 0.80 | 0.85    | 0.75       | 0.85       | 0.76    | 0.79   | 0.80     | 0.70   | 0.82    | 0.78   |
-| Gemini-3-Pro    | Semantic Similarity| 0.79  | 0.82 | 0.85    | 0.77       | 0.81       | 0.84    | 0.85   | 0.84     | 0.83   | 0.80    | 0.83   |
-|                 | BLEU-2             | 0.30  | 0.44 | 0.39    | 0.31       | 0.41       | 0.33    | 0.38   | 0.37     | 0.24   | 0.39    | 0.30   |
-|                 | COMET              | 0.91  | 0.91 | 0.93    | 0.93       | 0.93       | 0.87    | 0.84   | 0.87     | 0.85   | 0.89    | 0.88   |
-|                 | S                  | 0.78  | 0.88 | 0.86    | 0.79       | 0.87       | 0.79    | 0.82   | 0.82     | 0.73   | 0.83    | 0.78   |
-| GPT-5.4         | Semantic Similarity| 0.77  | 0.80 | 0.83    | 0.75       | 0.80       | 0.83    | 0.84   | 0.83     | 0.82   | 0.81    | 0.82   |
-|                 | BLEU-2             | 0.27  | 0.38 | 0.36    | 0.26       | 0.38       | 0.30    | 0.35   | 0.36     | 0.21   | 0.36    | 0.24   |
-|                 | COMET              | 0.90  | 0.89 | 0.91    | 0.93       | 0.93       | 0.85    | 0.83   | 0.86     | 0.84   | 0.88    | 0.87   |
-|                 | S                  | 0.75  | 0.83 | 0.83    | 0.76       | 0.84       | 0.77    | 0.79   | 0.81     | 0.71   | 0.81    | 0.73   |
-| Mango-MT        | Semantic Similarity| 0.82  | 0.84 | 0.86    | 0.84       | 0.86       | 0.87    | 0.88   | 0.86     | 0.86   | 0.87    | 0.84   |
-|                 | BLEU-2             | 0.40  | 0.49 | 0.44    | 0.49       | 0.51       | 0.46    | 0.48   | 0.42     | 0.33   | 0.50    | 0.36   |
-|                 | COMET              | 0.92  | 0.91 | 0.93    | 0.94       | 0.94       | 0.88    | 0.86   | 0.89     | 0.88   | 0.89    | 0.87   |
-|                 | S                  | 0.86  | 0.91 | 0.90    | 0.93       | 0.94       | 0.89    | 0.90   | 0.87     | 0.81   | 0.92    | 0.81   |
+| Models          | Malay | Thai | English | Indonesian | Vietnamese | Russian | French | Japanese | Korean | Spanish | Arabic |
+|-----------------|-------|------|---------|------------|------------|---------|--------|----------|--------|---------|--------|
+| DeepSeek-V4-Pro | 0.76  | 0.80 | 0.85    | 0.75       | 0.85       | 0.76    | 0.79   | 0.80     | 0.70   | 0.82    | 0.78   |
+| Gemini-3-Pro    | 0.78  | 0.88 | 0.86    | 0.79       | 0.87       | 0.79    | 0.82   | 0.82     | 0.73   | 0.83    | 0.78   |
+| GPT-5.4         | 0.75  | 0.83 | 0.83    | 0.76       | 0.84       | 0.77    | 0.79   | 0.81     | 0.71   | 0.81    | 0.73   |
+| Mango-MT        | 0.86  | 0.91 | 0.90    | 0.93       | 0.94       | 0.89    | 0.90   | 0.87     | 0.81   | 0.92    | 0.81   |
 
 
 ### FLORES
