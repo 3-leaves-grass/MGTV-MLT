@@ -173,8 +173,6 @@ The evaluation set is constructed based on real-world film and television subtit
 
 #### Criteria
 
-Automated evaluation is conducted around two core objectives: semantic quality and subtitle structural compliance. For semantic quality, reference-based COMET, semantic similarity, and BLEU-2 metrics are employed to evaluate translation quality from multiple dimensions including neural assessment, semantic proximity, and surface n-gram matching. In terms of subtitle structure, we inspect the count and order of subtitle segments, empty translations, missing translations, misalignment, timestamp validity, and format compliance to determine whether the translated subtitles can be used for backfilling and formal delivery
-
 To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
 
 $$
