@@ -36,22 +36,6 @@ Model checkpoints are accessible from xxx
 
 ## Usage
 
-### Transformers Usage
-```
-python examples/infer/transformers_infer.py
-```
-
-
-### Swift Usage
-[ms-swift](https://github.com/modelscope/ms-swift) is a large model and multimodal large model fine-tuning and deployment framework provided by the ModelScope community.
-```
-pip install ms-swift -U
-```
-see the [documents](https://swift.readthedocs.io/en/latest/) for more details
-```
-python examples/infer/swift_infer.py
-```
-
 ### SGLang Server Usage
 [SGLang](https://github.com/sgl-project/sglang) is a fast serving framework for large language models and vision language models. Please use the following command in a fresh environment:
 ```
@@ -79,29 +63,13 @@ The following will create API endpoints at http://localhost:8000/v1:
 vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 --reasoning-parser qwen3 --language-model-only
 ```
 
-### API Usage
-The chat completions API is accessible via standard HTTP requests or OpenAI SDKs. Here, we show examples using the OpenAI Python SDK.
+## Benchmark
 
-Before starting, make sure it is installed and the API key and the API base URL is configured, e.g.:
-```
-pip install -U openai
-```
-Set the following accordingly
-```
-export OPENAI_BASE_URL="http://localhost:8000/v1"
-export OPENAI_API_KEY="EMPTY"
-```
-An usage example
-```
-python examples/infer/test_openai.py
-```
-## Evaluation
-
-### Benchmark Introduction
+### FT-MT
 
 Audiovisual subtitle translation evaluation prioritizes practical delivery standards for global long-form videos rather than mere similarity to human references. Qualified subtitles require simultaneous compliance with semantic accuracy, natural expression, standardized segmentation, valid timestamps and traceable quality, which cannot be fully assessed by single automatic metrics. To mitigate this limitation, we build a dedicated audiovisual translation benchmark with a high-quality dataset and an automated-centric evaluation framework. It supports scalable, reproducible comprehensive model evaluation, with supplementary random manual sampling to assess subtle subtitle characteristics including character tone, cultural adaptability and viewing experience. We have released the [benchmark datasets](https://huggingface.co/datasets/xxx) in hugging face.
 
-#### Benchmark dataset
+#### dataset
 
 The evaluation set is constructed based on real-world film and television subtitle scenarios, covering 11 languages with a total of 8019 sentence-level samples.
 
@@ -123,13 +91,6 @@ The evaluation set is constructed based on real-world film and television subtit
 #### Criteria
 
 To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
-
-$$
-S = 0.25E + 0.44C + 0.31 \times B 
-$$
-
-In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted overall score
-
 
 1. **Semantic similarity：**
    Semantic similarity quantifies the semantic proximity between model translations and reference translations based on text embeddings.
@@ -186,12 +147,6 @@ Evaluation Results on S(overall score) are:
 We evaluate the multilingual translation performance of our model on FLORES+ which is based on FLORES-200. This dataset was originally released by FAIR researchers at Meta under the name FLORES.  The data is now being managed by OLDI, [the Open Language Data Initiative](https://oldi.org/). The + has been added to the name to disambiguate between the original datasets and this new actively developed version. For newer versions of this dataset, Please see [FLORES+ HuggingFace repo ](https://huggingface.co/datasets/openlanguagedata/flores_plus).
 The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
 
-Following official FLORES+ evaluation protocols, we adopt two core universal metrics to quantify translation quality:
-
-- spBLEU: SentencePiece-normalized BLEU with a unified 256k multilingual SentencePiece tokenizer, eliminating tokenization bias to enable equitable score comparison across all 200 languages.
-
-- chrF++: Character-level F-score optimized for agglutinative, non-Latin, and low-orthography languages, complementing spBLEU to capture fine-grained lexical and character-level alignment.
-
 
 ### Dependencies
 
@@ -200,22 +155,7 @@ pip install sacrebleu sentencepiece
 ```
 ### Steps
 #### Step 1
-Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. The description of 11 languages in flores are following：
-
-| Code | Script | lang | file name |
-|------|--------|------|-------------------|
-| rus  | Cyrl   | Russian | rus_Cyrl.jsonl |
-| ind  | Latn   | Indonesian | ind_Latn.jsonl |
-| jpn  | Jpan   | Japanese | jpn_Jpan.jsonl |
-| fra  | Latn   | French | fra_Latn.jsonl |
-| tha  | Thai   | Thai | tha_Thai.jsonl |
-| eng  | Latn   | English | eng_Latn.jsonl |
-| spa  | Latn   | Spanish (Latin American) | spa_Latn.jsonl |
-| vie  | Latn   | Vietnamese | vie_Latn.jsonl |
-| ara  | Arab   | Modern Standard Arabic | arb_Arab.jsonl |
-| kor  | Hang   | Korean | kor_Hang.jsonl |
-| zsm  | Latn   | Standard Malay | zsm_Latn.jsonl |
-| cmn  | Hans   | Mandarin Chinese (Standard Beijing) | cmn_Hans.jsonl |
+Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. 
 
 #### Step 2
 
