@@ -176,10 +176,10 @@ The evaluation set is constructed based on real-world film and television subtit
 To enable horizontal comparison of different models and translation batches on the same evaluation set, we derive a weighted composite score for automated evaluation with the formula as follows:
 
 $$
-S = 0.20E + 0.35C + 0.25 \times B + 0.10T + 0.10F
+S = 0.25E + 0.44C + 0.31 \times B 
 $$
 
-In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted composite score, $T$ stands for timestamp accuracy, $F$ represents format compliance. 
+In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarity score,  $S$ refers to the weighted composite score
 
 
 1. **Semantic similarity：**
@@ -191,11 +191,6 @@ In the formula, $C$ denotes subtitle COMET score, $E$ denotes semantic similarit
 5. **BLEU-2：**
    BLEU-2 provides supplementary information on local surface matching and phrase consistency. Thus, its weight is doubled in the weighted composite score.
 
-6. **Timestamp：**
-   Timestamp accuracy evaluates whether subtitle segments maintain stable alignment with video timecodes.
-   
-7. **Format：**
-   Format compliance verifies that punctuation, line breaks, layout structure and final subtitle delivery format conform to specifications.
 
 ### Steps
 #### Step 1
