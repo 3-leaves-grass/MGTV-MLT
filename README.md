@@ -219,5 +219,11 @@ Evaluation Results on chrF++:
 2. **chrF++ (fine-grained semantic metric)：**
    Gemini leads the macro average (49.33), followed by Mango-MT (48.23), DeepSeek (47.89) and GPT (47.21). Our model matches or outperforms commercial models across multiple languages.
 
+# Contact Us
+If you love open source and enjoy tinkering, whether for learning purposes or to share better ideas, you are welcome to join us.
+
+# Acknowledgements
+Thanks to the support of subtitle translation from Beijing International Studies University 
+
 # License
 This framework is licensed under the Apache License (Version 2.0). For models and datasets, please refer to the original resource page and follow the corresponding License.
